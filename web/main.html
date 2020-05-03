@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<title>DES加解密</title>
+		<style>
+			input[type=text] {
+				border: none;
+				outline: none;
+				border-bottom: 1px dotted darkgray;
+				width:500px;
+			}
+			a:link,
+    		a:visited {
+    			color:#FF0000;
+    			text-decoration:underline;
+    		}
+    		a:hover,
+    		a:active {
+    			color:#000000;
+    		text-decoration:none;
+    		}
+		</style>
+		<script type="text/javascript" src="/eel.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("#btn1").click(function(){
+        eel.main($("#text").val(), $("#key").val(), 0);
+        alert('encode operation successfully! please check out');
+        });
+    $("#btn2").click(function(){
+        eel.main($("#text1").val(), $("#key1").val(), 1);
+        alert('decode operation successfully! please check out');
+    });
+});
+</script>
+	</head>
+	<body>
+		<fieldset>
+			<legend>DES加密</legend>
+			<p>
+				明文：
+				<textarea cols="80" rows="5" id="text" placeholder="目前只能加密英文(区分大小写)数字"></textarea>
+			</p>
+			<p>
+				密钥:
+				<input type="text" id="key" placeholder="密钥由英文字母(区分大小写)加数字构成" required>
+			</p>
+			<p>
+				<input type='button' id='btn1' value='加密'>
+			</p>
+   			<div id="result">
+       		 	<p><a href="result.txt" target="result">显示结果</a></p>
+				<iframe name="result" width="500" height="100" scrolling="true"></iframe>
+    		</div>
+		</fieldset>
+		<fieldset>
+			<legend>DES解密</legend>
+			<p>
+				密文：
+				<textarea cols="80" rows="5" id="text1" placeholder="请输入0或1的字符串"></textarea>
+			</p>
+			<p>
+				密钥:
+				<input type="text" id="key1" placeholder="密钥由英文字母(区分大小写)加数字构成" required>
+			</p>
+			<p>
+				<input type="button" id="btn2" value="解密">
+			</p>
+<div id="result1">
+    <p><a href="result1.txt" target="result1">显示结果</a></p>
+	<iframe name="result1" width="500" height="100" scrolling="true"></iframe>
+</div>
+		</fieldset>
+		<div id="footer">CopyRight@fisher2020 </div>
+	</body>
+</html>
